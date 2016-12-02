@@ -1,0 +1,32 @@
+{
+  "_npmOperationalInternal": {
+    "host": "packages-13-west.internal.npmjs.com",
+    "tmp": "tmp/serverless-starter-0.2.1.tgz_1458892667270_0.7738919164985418"
+  },
+  "author": {
+    "name": "Joe Flasher"
+  },
+  "bugs": {
+    "url": "https://github.com/awslabs/naip-on-aws/issues"
+  },
+  "dependencies": {
+    "async": "^2.0.0",
+    "aws-sdk": "^2.4.11",
+    "brfs": "^1.4.3",
+    "csv-parse": "^1.1.7",
+    "handlebars": "^4.0.5",
+    "lodash": "^4.16.4",
+    "serverless-client-s3": "^2.0.0",
+    "serverless-optimizer-plugin": "^2.0.0"
+  },
+  "description": "An example of using a serverless environment to provide data pages for NAIP imagery.",
+  "devDependencies": {},
+  "homepage": "https://github.com/awslabs/naip-on-aws",
+  "license": "Apache-2.0",
+  "name": "naiponaws",
+  "optionalDependencies": {},
+  "private": false,
+  "repository": "https://github.com/awslabs/naip-on-aws",
+  "scripts": {},
+  "version": "1.0.0"
+}

@@ -1,0 +1,40 @@
+/**
+ * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in
+ * compliance with the License. A copy of the License is located at
+ *
+ * http://aws.amazon.com/apache2.0/
+ *
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+'use strict';
+
+/**
+ * Serverless Module: Lambda Handler
+ * - Your lambda functions should be a thin wrapper around your own separate
+ * modules, to keep your code testable, reusable and AWS independent
+ * - 'serverless-helpers-js' module is required for Serverless ENV var support.  Hopefully, AWS will add ENV support to Lambda soon :)
+ */
+
+// Require Logic
+var throttle = require('../../lib/throttle');
+
+// Lambda Handler
+module.exports.handler = function (event, context) {
+  // Branch depending on whether this is a scheduled event or from SNS topic
+  if (event.source === 'aws.events') {
+    throttle.reset(event, function (error, response) {
+      return context.done(error, response);
+    });
+  } else if (event.Records && event.Records[0] && event.Records[0].EventSource === 'aws:sns') {
+    throttle.limit(event, function (error, response) {
+      return context.done(error, response);
+    });
+  } else {
+    return context.done('Unknown invoker');
+  }
+};

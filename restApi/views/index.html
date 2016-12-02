@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{> header title='NAIP on AWS'}}
+
+  <body>
+    <div class="container col-xs-12 col-md-8 col-md-offset-2">
+      <header>
+        <div class="jumbotron">
+          <a href="http://aws.amazon.com/what-is-cloud-computing"><img src="{{staticURL}}assets/img/375px-AWS_Logo_Web-Black.png" alt="Powered by AWS Cloud Computing" class="pull-right" id="aws_header_logo"></a>
+          <h1>NAIP on AWS</h1>
+          <hr>
+          <p class="lead"><a href="https://aws.amazon.com/public-data-sets/naip">NAIP on AWS</a> makes National Agriculture Imagery Program (NAIP) data available for anyone to use via Amazon S3. The National Agriculture Imagery Program (NAIP) acquires aerial imagery during the agricultural growing seasons in the continental U.S. Roughly one meter aerial imagery (Red, Green, Blue, NIR) is available for multiple years on Amazon S3.</p>
+          <p>This site allows you to browse all NAIP imagery available on AWS.</p>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <p><a class="btn btn-default btn-lg btn-block" href="{{basePath}}/states" role="button">Explore NAIP Imagery</a></p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <hr>
+      <div class="row marketing">
+        <div class="col-md-6">
+          <h3>About NAIP</h3>
+          <p>The National Agriculture Imagery Program is administered by the USDA's Farm Service Agency (FSA) through the Aerial Photography Field Office in Salt Lake City.</p>
+          <p>Learn more at <a href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/">USDA's NAIP page</a>.</p>
+
+          <h3>Accessing NAIP on AWS</h3>
+          <p>All data is available in the <code>aws-naip</code> Amazon S3 bucket in the in US East AWS Region. Data is optimized for programattic access from <a href="https://aws.amazon.com/ec2">Amazon EC2</a>.</p>
+          <p>More information on accessing <a href="https://aws.amazon.com/public-data-sets/naip/">NAIP on AWS</a>.</p>
+        </div>
+
+        <div class="col-md-6">
+          <h3>Earth on AWS</h3>
+          <p>A variety of Earth observation and environmental datasets are available at no cost on AWS. Analyze data without needing to download or store your own copy.</p>
+          <p>Learn more about <a href="https://aws.amazon.com/earth">Earth on AWS</a>.</p>
+
+          <h3>This is a Serverless Site</h3>
+          <p>This site uses <a href="https://aws.amazon.com/lambda">AWS Lambda</a> and <a href="https://aws.amazon.com/api-gateway">Amazon API Gateway</a> to create web pages on demand without maintaining any servers.</p>
+          <p>Learn more on the <a href="https://aws.amazon.com/blogs/compute/category/aws-lambda/">AWS Compute blog</a>.</p>
+        </div>
+      </div>
+
+      {{> footer}}
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{staticURL}}assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

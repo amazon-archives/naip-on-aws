@@ -1,0 +1,50 @@
+{
+  "name": "naip-throttle",
+  "runtime": "nodejs",
+  "description": "Throttle the downloads endpoint.",
+  "customName": false,
+  "customRole": false,
+  "handler": "naip/throttle/handler.handler",
+  "timeout": 20,
+  "memorySize": 128,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": [],
+    "envVars": [],
+    "optimize": {
+      "exclude": [
+        "aws-sdk"
+      ]
+    }
+  },
+  "endpoints": [],
+  "events": [
+    {
+      "name": "monthlyReset",
+      "type": "schedule",
+      "config": {
+        "schedule": "cron(0 0 1 * ? *)",
+        "enabled": true
+      }
+    },
+    {
+      "name" : "limitReached",
+      "type": "sns",
+      "config": {
+        "topicName": "arn:aws:sns:us-east-1:947081328633:naip-on-aws-s3-egress"
+      }
+    }
+  ],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}",
+    "BASE_URL": "${baseURL}",
+    "STATIC_URL": "${staticURL}",
+    "API_GATEWAY_ID": "${apiGatewayId}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

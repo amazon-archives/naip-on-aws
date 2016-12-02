@@ -1,0 +1,8 @@
+{
+  "apiRequestTemplate": {
+    "application/json": {
+      "state": "$input.params('state')",
+      "year": "$input.params('year')"
+    }
+  }
+}
