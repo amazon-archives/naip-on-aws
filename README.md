@@ -1,6 +1,6 @@
 ﻿# NAIP on AWS viewer
 
-The NAIP on AWS viewer is a serverless, lightweight, fast, and infinitely scalable website designed to display data from the [NAIP on AWS](https://aws.amazon.com/public-data-sets/naip/) public data set. It uses [AWS Lambda](https://aws.amazon.com/lambda/), and [AWS API Gateway](https://aws.amazon.com/api-gateway/) to dynamically generate pages on the fly for hundreds of thousands of images. It is based on work originally done in [landsat-on-aws](https://github.com/awslabs/landsat-on-aws).
+The NAIP on AWS viewer is a serverless, lightweight, fast, and infinitely scalable website designed to display data from the [NAIP on AWS](https://aws.amazon.com/public-data-sets/naip/) public data set. It uses [AWS Lambda](https://aws.amazon.com/lambda/), and [AWS API Gateway](https://aws.amazon.com/api-gateway/) to dynamically generate pages on the fly for hundreds of thousands of images stored on Amazon S3. It is based on work originally done in [landsat-on-aws](https://github.com/awslabs/landsat-on-aws).
 
 You can see an example of the website in action at https://f5f3hkneq5.execute-api.us-east-1.amazonaws.com/prod.
 
