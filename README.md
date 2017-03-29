@@ -28,6 +28,10 @@ The project structure is a slightly modified version of the [serverless-starter]
 
 The project relies on dynamically generating HTML output using Lambda functions at request time (requests handled by API Gateway). An updater can be run to check the latest files in the `aws-naip` S3 bucket and creates a small amount of underlying data files that get stored on S3. These files are requested by Lambda functions as needed, before HTML is returned. This means that we are only serving content-full (as opposed to using JavaScript to load data within the page itself) from API Gateway which makes indexing easier. This also means that outside of our small set of data files, we are not storing anything to present the hundreds of thousands of pages needed to reflect the underlying NAIP imagery.
 
+An architectural overview can be seen below (note that there is no Amazon DynamoDB instance in this prototype).
+
+![](https://cloud.githubusercontent.com/assets/848934/24473919/e73b7414-1498-11e7-806c-29eb3877ba6a.png)
+
 ## Egress Control
 
 From the individual imagery page, metadata, TIFFs and shapefiles can be downloaded. When a request is made for this data (via the webpage or programmatically), a short-lived, signed URL is generated and returned to the requester. The code shows off three mechanisms for controlling total egress:
