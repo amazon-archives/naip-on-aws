@@ -1,6 +1,6 @@
 {
   "name": "naip-quads",
-  "runtime": "nodejs",
+  "runtime": "nodejs4.3",
   "description": "Handler for quads page",
   "customName": false,
   "customRole": false,
