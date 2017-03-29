@@ -1,6 +1,6 @@
 {
   "name": "naip-throttle",
-  "runtime": "nodejs",
+  "runtime": "nodejs4.3",
   "description": "Throttle the downloads endpoint.",
   "customName": false,
   "customRole": false,

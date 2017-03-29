@@ -1,6 +1,6 @@
 {
   "name": "naip-index",
-  "runtime": "nodejs",
+  "runtime": "nodejs4.3",
   "description": "Handler for root and sitemap proxies",
   "customName": false,
   "customRole": false,
